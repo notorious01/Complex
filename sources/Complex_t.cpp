@@ -34,23 +34,26 @@ Complex_t Complex_t::operator = (const Complex_t& result)
 	b = result.b;
 	return *this;
 }
-Complex_t Complex_t::operator >>()
+istream& operator >> (istream&cin, Complex_t& result)
 {
-	double x, y;
-	cout << "Действительная часть\n";
-	cin >> x;
-	cout << "Мнимая часть\n";
-	cin >> y;
-	Complex A = Complex(x, y);
-	return A;
+	cout << "Please enter real complex part:" << endl;
+	cin >> result.a;
+	cout << "Please enter imaginary complex part:" << endl;
+	cin >> result.b;
+	cout << endl;
+	return cin;
 }
-Complex_t Complex_t::operator <<(std::ostream & stream) const
+
+ostream& operator << (ostream&cout, Complex_t& result)
+{
+	if (result.b < 0)
 	{
-		if (b >= 0)
-		stream <<  a << "+" << b << "i\n";
-		else
-			stream << a << b << "i\n";
+		cout << result.a << result.b << "i" << endl;
 	}
+	else
+		cout << result.a << "+" << result.b << "i" << endl;
+	return cout;
+}
 Complex_t Complex_t::operator * (const Complex_t& c2) const
 {
 	return Complex_t(a*c2.a - b*c2.b, a*c2.b + c2.a*b);
