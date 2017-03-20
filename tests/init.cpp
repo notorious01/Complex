@@ -2,24 +2,24 @@
 #include <catch.hpp>
 SCENARIO("def constructor")
 {
-	Complex_t complex;
-	REQUIRE(complex.a_() == 0);
-	REQUIRE(complex.b_() == 0);
+	Complex_t Complex;
+	REQUIRE(Complex.a_() == 0);
+	REQUIRE(Complex.b_() == 0);
 }
 
 SCENARIO("param constructor") 
 {
-	Complex_t complex(1, 2);
-	REQUIRE(complex.a_() == 1);
-	REQUIRE(complex.b_() == 2);
+	Complex_t Complex(1, 2);
+	REQUIRE(Complex.a_() == 1);
+	REQUIRE(Complex.b_() == 2);
 }
 
 SCENARIO("copy constructor")
 {
-	Complex_t complex(1, 2);
-	Complex_t copy(complex);
-	REQUIRE(copy.a_() == 1);
-	REQUIRE(copy.b_() == 2);
+	Complex_t Complex(1, 2);
+	Complex_t cop(Complex);
+	REQUIRE(cop.a_() == 1);
+	REQUIRE(cop.b_() == 2);
 }
 
 SCENARIO("operator *")
