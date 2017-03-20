@@ -1,21 +1,20 @@
 #include "Complex_t.hpp"
 
-Complex_t::Complex_t() : a(0.0), b(0.0)
+Complex_t :: Complex_t(): a(0.0), b(0.0)
 {}
-Complex_t::Complex_t(double x, double y):a(x), b(y)
-	{	
-	}
-Complex_t::Complex_t(const Complex_t&cop)
+Complex_t :: Complex_t(double x, double y) : a(x), b(y)
+{}
+Complex_t :: Complex_t(const Complex_t&cop)
 {
 	a = cop.a;
 	b = cop.b;
 } 
-double Complex_t::a_()
+double Complex_t :: a_()
 {
 	return a;
 }
 
-double Complex_t::b_()
+double Complex_t :: b_()
 {
 	return b;
 }
