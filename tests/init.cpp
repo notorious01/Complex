@@ -24,9 +24,9 @@ SCENARIO("copy constructor")
 
 SCENARIO("operator *")
 {
-	complex_t c1(3, 2);
+	complex_t c1(7, 6);
 	complex_t c2(5, 4);
-	complex_t c3(15, 8);
+	complex_t c3(11, 58);
 	REQUIRE((c1*c2) == c3);
 }
 
