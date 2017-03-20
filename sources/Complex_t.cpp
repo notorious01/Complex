@@ -35,7 +35,7 @@ Complex_t Complex_t::operator = (const Complex_t& result)
 	b = result.b;
 	return *this;
 }
-Complex_t Complex_t operator >>()
+Complex_t Complex_t::operator >>()
 {
 	double x, y;
 	cout << "Действительная часть\n";
@@ -45,7 +45,7 @@ Complex_t Complex_t operator >>()
 	Complex A = Complex(x, y);
 	return A;
 }
-Complex_t Complex_t operator <<(std::ostream & stream) const
+Complex_t Complex_t::operator <<(std::ostream & stream) const
 	{
 		if (b >= 0)
 		stream <<  a << "+" << b << "i\n";
