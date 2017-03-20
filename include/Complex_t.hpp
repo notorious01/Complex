@@ -1,29 +1,30 @@
+
 #include <iostream>
 
 using namespace std;
 
-class Complex_t
+class complex_t
 {
 private:
 	float a;
 	float b;
 public:
 	Сomplex_t();
-	Complex_t(double x, double y);
+	complex_t(double x, double y);
 
-	Complex_t(const Complex_t&cop);
+	complex_t(const complex_t&cop);
 
 	double a_();
 	double b_();
 
-	Complex_t operator * (const Complex_t& c2) const;
-	Complex_t operator / (const Complex_t& c2) const;
-	Complex_t operator += (const Complex_t& c2);
-	Complex_t operator -= (const Complex_t& c2);
-	Complex_t operator *= (const Complex_t& c2);
-	Complex_t operator /= (const Complex_t& c2);
-	Complex_t operator = (const Complex_t& result); 
-	bool operator == (const Сomplex_t& c2) const;
-	friend istream& operator >> (istream&cin, Complex_t& result);
-	friend ostream& operator << (ostream&cout, Complex_t& result);
+	complex_t operator * (const complex_t& c2) const;
+	complex_t operator / (const complex_t& c2) const;
+	complex_t operator += (const complex_t& c2);
+	complex_t operator -= (const complex_t& c2);
+	complex_t operator *= (const complex_t& c2);
+	complex_t operator /= (const complex_t& c2);
+	complex_t operator = (const complex_t& result);
+	bool operator == (const complex_t& c2) const;
+	friend istream& operator >> (istream&cin, complex_t& result);
+	friend ostream& operator << (ostream&cout, complex_t& result);
 };
