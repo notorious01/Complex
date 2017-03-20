@@ -6,10 +6,11 @@ using namespace std;
 class complex_t
 {
 private:
-	float a;
-	float b;
+	double a;
+	double b;
 public:
 	сomplex_t();
+	
 	complex_t(double x, double y);
 
 	complex_t(const complex_t&cop);
