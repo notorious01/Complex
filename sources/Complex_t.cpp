@@ -3,8 +3,7 @@
 Complex_t::Complex_t() : a(0.0), b(0.0)
 {}
 Complex_t::Complex_t(double x, double y):a(x), b(y)
-	{
-		
+	{	
 	}
 Complex_t::Complex_t(const Complex_t&cop)
 {
