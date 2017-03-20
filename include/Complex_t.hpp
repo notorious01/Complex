@@ -8,8 +8,7 @@ private:
 	float a;
 	float b;
 public:
-	complex_t();
-
+	Сomplex_t();
 	Complex_t(double x, double y);
 
 	Complex_t(const Complex_t&cop);
@@ -24,7 +23,7 @@ public:
 	Complex_t operator *= (const Complex_t& c2);
 	Complex_t operator /= (const Complex_t& c2);
 	Complex_t operator = (const Complex_t& result); 
-	bool operator == (const complex_t& c2) const;
+	bool operator == (const Сomplex_t& c2) const;
 	Complex_t operator >> ();
 	Complex_t operator << (std::ostream & stream) const;
 };
