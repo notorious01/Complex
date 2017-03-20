@@ -9,7 +9,7 @@ private:
 	float a;
 	float b;
 public:
-	Сomplex_t();
+	сomplex_t();
 	complex_t(double x, double y);
 
 	complex_t(const complex_t&cop);
