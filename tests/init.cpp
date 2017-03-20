@@ -1,6 +1,5 @@
 #include <Complex_t.hpp>
 #include <catch.hpp>
-
 SCENARIO("def constructor")
 {
 	Complex_t complex;
