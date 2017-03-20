@@ -1,30 +1,92 @@
 #include "Complex_t.hpp"
 
-Complex_t Complex_t::add(const Complex c1) const 
+Complex_t::Complex_t() : a(0.0), b(0.0)
+{}
+Complex_t::Complex_t(double x, double y):a(x), b(y)
+	{
+		
+	}
+Complex_t::Complex_t(const Complex_t&cop)
 {
-	Complex_t r;
-	r.a = a + c1.a;
-	r.b = b + c1.b;
-	return r;
+	a = cop.a;
+	b = cop.b;
+} 
+double Complex_t::a_()
+{
+	return a;
 }
-Complex_t Complex_t::sub(const Complex c2) const 
+
+double Complex_t::b_()
 {
-	Complex_t l;
-	l.a = a - c2.a;
-	l.b = b - c2.b;
-	return l;
+	return b;
 }
-Complex_t Complex_t::multInt(const int n) const 
+bool Complex_t::operator == (const Complex_t& c2) const
 {
-	Complex_t q;
-	q.a = a * n;
-	q.b = b * n;
-	return q;
+	if ((a == c2.a) && (b == c2.b))
+		return true;
 }
-Complex_t Complex_t::divInt(const int n) const 
+
+Complex_t Complex_t::operator = (const Complex_t& result)
 {
-	Complex_t t;
-	t.a = a / n;
-	t.b = b / n;
-	return t;
+	if (this == &result) {
+		return *this;
+	}
+	a = result.a;
+	b = result.b;
+	return *this;
+}
+Complex_t Complex_t operator >>()
+{
+	double x, y;
+	cout << "Действительная часть\n";
+	cin >> x;
+	cout << "Мнимая часть\n";
+	cin >> y;
+	Complex A = Complex(x, y);
+	return A;
+}
+Complex_t Complex_t operator <<(std::ostream & stream) const
+	{
+		if (b >= 0)
+		stream <<  a << "+" << b << "i\n";
+		else
+			stream << a << b << "i\n";
+	}
+Complex_t Complex_t::operator * (const Complex_t& c2) const
+{
+	return Complex_t(a*c2.a - b*c2.b, a*c2.b + c2.a*b);
+}
+
+Complex_t Complex_t::operator / (const Complex_t& c2) const
+{
+	return Complex_t((a*c2.a + b*c2.b) / (c2.a*c2.a + c2.b*c2.b), (c2.a*b - a*c2.b) / (c2.a*c2.a + c2.b*c2.b));
+}
+
+Сomplex_t Сomplex_t::operator += (const Сomplex_t& c2)
+{
+	a += c2.a;
+	b += c2.b;
+	return *this;
+}
+
+Сomplex_t Сomplex_t::operator -= (const Сomplex_t& c2)
+{
+	a -= c2.a;
+	b -= c2.b;
+	return *this;
+}
+Сomplex_t Сomplex_t::operator /= (const Сomplex_t& c2)
+{
+	float a_ = (a*c2.a + b*c2.b) / (c2.a*c2.a + c2.b*c2.b);
+	b = (c2.a*b - a*c2.b) / (c2.a*c2.a + c2.b*c2.b);
+	a = a_;
+	return *this;
+}
+
+Сomplex_t Сomplex_t::operator *= (const Сomplex_t& c2)
+{
+	float a_ = a*c2.a - b*c2.b;
+	b = a*c2.b + c2.a*b;
+	a = a_;
+	return *this;
 }
