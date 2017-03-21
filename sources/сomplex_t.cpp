@@ -25,12 +25,13 @@ bool complex_t::operator == (const complex_t& c2) const
 
 complex_t complex_t::operator = (const complex_t& result)
 {
-	if (this == &result) {
-		return *this;
-	}
+	if (this !== &result) 
+	{
 	a = result.a;
 	b = result.b;
 	return *this;
+	}
+
 }
 istream& operator >> (istream&cin, complex_t& result) 
 {
