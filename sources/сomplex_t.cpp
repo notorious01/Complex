@@ -25,7 +25,7 @@ bool complex_t::operator == (const complex_t& c2) const
 
 complex_t complex_t::operator = (const complex_t& result)
 {
-	if (this !== &result) 
+	if (this != &result) 
 	{
 	a = result.a;
 	b = result.b;
@@ -33,7 +33,7 @@ complex_t complex_t::operator = (const complex_t& result)
 	}
 
 }
-istream& operator >> (istream&cin, complex_t& result) 
+istream& operator >> (istream&cin, complex_t& result) const
 {
 	cout << "Please enter real complex part:" << endl;
 	cin >> result.a;
@@ -43,7 +43,7 @@ istream& operator >> (istream&cin, complex_t& result)
 	return cin;
 }
 
-ostream& operator << (ostream&cout, complex_t& result) const
+ostream& operator << (ostream&cout, complex_t& result) 
 {
 	if (result.b < 0)
 	{
