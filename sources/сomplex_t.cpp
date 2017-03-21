@@ -42,7 +42,7 @@ istream& operator >> (istream&cin, complex_t& result)
 	return cin;
 }
 
-ostream& operator << (ostream&cout, complex_t& result) const
+ostream& operator << (ostream&cout, complex_t& result)
 {
 	if (result.b < 0)
 	{
