@@ -8,12 +8,12 @@ complex_t::complex_t(const complex_t&cop)
 	a = cop.a;
 	b = cop.b;
 }
-double complex_t::a_() const 
+double complex_t::a_() 
 {
 	return a;
 }
 
-double complex_t::b_() const 
+double complex_t::b_()
 {
 	return b;
 }
@@ -23,7 +23,7 @@ bool complex_t::operator == (const complex_t& c2) const
 		return true;
 }
 
-complex_t complex_t::operator = (const complex_t& result) const
+complex_t complex_t::operator = (const complex_t& result)
 {
 	if (this == &result) {
 		return *this;
@@ -52,30 +52,30 @@ ostream& operator << (ostream&cout, complex_t& result)
 		cout << result.a << "+" << result.b << "i" << endl;
 	return cout;
 }
-complex_t complex_t::operator * (const complex_t& c2) const
+complex_t complex_t::operator * (const complex_t& c2) 
 {
 	return complex_t(a*c2.a - b*c2.b, a*c2.b + c2.a*b);
 }
 
-complex_t complex_t::operator / (const complex_t& c2) const
+complex_t complex_t::operator / (const complex_t& c2) 
 {
 	return complex_t((a*c2.a + b*c2.b) / (c2.a*c2.a + c2.b*c2.b), (c2.a*b - a*c2.b) / (c2.a*c2.a + c2.b*c2.b));
 }
 
-complex_t complex_t::operator += (const complex_t& c2) const
+complex_t complex_t::operator += (const complex_t& c2) 
 {
 	a += c2.a;
 	b += c2.b;
 	return *this;
 }
 
-complex_t complex_t::operator -= (const complex_t& c2) const
+complex_t complex_t::operator -= (const complex_t& c2) 
 {
 	a -= c2.a;
 	b -= c2.b;
 	return *this;
 }
-complex_t complex_t::operator /= (const complex_t& c2) const
+complex_t complex_t::operator /= (const complex_t& c2) 
 {
 	float a_ = (a*c2.a + b*c2.b) / (c2.a*c2.a + c2.b*c2.b);
 	b = (c2.a*b - a*c2.b) / (c2.a*c2.a + c2.b*c2.b);
@@ -83,7 +83,7 @@ complex_t complex_t::operator /= (const complex_t& c2) const
 	return *this;
 }
 
-complex_t complex_t::operator *= (const complex_t& c2) const
+complex_t complex_t::operator *= (const complex_t& c2) 
 {
 	float a_ = a*c2.a - b*c2.b;
 	b = a*c2.b + c2.a*b;
