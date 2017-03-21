@@ -26,5 +26,5 @@ public:
 	complex_t operator = (const complex_t& result);
 	bool operator == (const complex_t& c2) const;
 	friend istream& operator >> (istream&cin,complex_t& result);
-	friend ostream& operator << (ostream&cout,complex_t& result);
+	friend ostream& operator << (ostream&cout,const complex_t& result);
 };
