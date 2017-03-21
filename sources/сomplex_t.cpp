@@ -33,7 +33,7 @@ complex_t complex_t::operator = (const complex_t& result)
 	}
 
 }
-istream& operator >> (istream&cin,const complex_t& result) const
+istream& operator >> (istream&cin, complex_t& result) 
 {
 	cout << "Please enter real complex part:" << endl;
 	cin >> result.a;
@@ -43,7 +43,7 @@ istream& operator >> (istream&cin,const complex_t& result) const
 	return cin;
 }
 
-ostream& operator << (ostream&cout,const complex_t& result) 
+ostream& operator << (ostream&cout,complex_t& result) 
 {
 	if (result.b < 0)
 	{
