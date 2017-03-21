@@ -8,12 +8,12 @@ complex_t::complex_t(const complex_t&cop)
 	a = cop.a;
 	b = cop.b;
 }
-double complex_t::a_() 
+double complex_t::a_() const
 {
 	return a;
 }
 
-double complex_t::b_()
+double complex_t::b_() const
 {
 	return b;
 }
@@ -32,7 +32,7 @@ complex_t complex_t::operator = (const complex_t& result)
 	b = result.b;
 	return *this;
 }
-istream& operator >> (istream&cin, complex_t& result)
+istream& operator >> (istream&cin, complex_t& result) 
 {
 	cout << "Please enter real complex part:" << endl;
 	cin >> result.a;
@@ -42,7 +42,7 @@ istream& operator >> (istream&cin, complex_t& result)
 	return cin;
 }
 
-ostream& operator << (ostream&cout, complex_t& result)
+ostream& operator << (ostream&cout, complex_t& result) const
 {
 	if (result.b < 0)
 	{
