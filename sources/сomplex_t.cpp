@@ -52,12 +52,12 @@ ostream& operator << (ostream&cout, complex_t& result)
 		cout << result.a << "+" << result.b << "i" << endl;
 	return cout;
 }
-complex_t complex_t::operator * (const complex_t& c2) 
+complex_t complex_t::operator * (const complex_t& c2) const
 {
 	return complex_t(a*c2.a - b*c2.b, a*c2.b + c2.a*b);
 }
 
-complex_t complex_t::operator / (const complex_t& c2) 
+complex_t complex_t::operator / (const complex_t& c2) const
 {
 	return complex_t((a*c2.a + b*c2.b) / (c2.a*c2.a + c2.b*c2.b), (c2.a*b - a*c2.b) / (c2.a*c2.a + c2.b*c2.b));
 }
