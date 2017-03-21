@@ -14,8 +14,8 @@ public:
 	
 	complex_t(const complex_t&cop);
 	
-	const double a_();
-	const double b_();
+	const double complex_t::a_()
+	const double complex_t::b_()
 	
 	complex_t operator * (const complex_t& c2) const;
 	complex_t operator / (const complex_t& c2) const;
