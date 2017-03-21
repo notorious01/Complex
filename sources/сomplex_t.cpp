@@ -8,12 +8,12 @@ complex_t::complex_t(const complex_t&cop)
 	a = cop.a;
 	b = cop.b;
 }
-double complex_t::a_() const
+double complex_t::a_() 
 {
 	return a;
 }
 
-double complex_t::b_() const
+double complex_t::b_() 
 {
 	return b;
 }
