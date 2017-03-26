@@ -2,29 +2,25 @@
 
 using namespace std;
 
-class complex_t
+class Complex_t
 {
 private:
-	double a;
-	double b;
+	double real, image;
 public:
-	complex_t();
+	Complex_t();
+	Complex_t(double r, double im);
+	Complex_t(const complex_t&copy);
+	double real_() const;
+	double image_() const;
 	
-	complex_t(double x, double y);
-	
-	complex_t(const complex_t&cop);
-	
-	double a_() const;
-	double b_() const;
-	
-	complex_t operator * (const complex_t& c2) const;
-	complex_t operator / (const complex_t& c2) const;
-	complex_t operator += (const complex_t& c2); 
-	complex_t operator -= (const complex_t& c2) ;
-	complex_t operator *= (const complex_t& c2) ;
-	complex_t operator /= (const complex_t& c2) ;
-	complex_t operator = (const complex_t& result);
-	bool operator == (const complex_t& c2) const;
-	friend istream& operator >> (istream&cin,complex_t& result);
-	friend ostream& operator << (ostream&cout,const complex_t& result);
-};
+	Complex_t operator * (const Complex_t& m) const;
+	Complex_t operator / (const Complex_t& m) const;
+	Complex_t operator += (const Complex_t& m);
+	Complex_t operator -= (const Complex_t& m);
+	Complex_t operator *= (const Complex_t& m);
+	Complex_t operator /= (const Complex_t& m);
+	Complex_t operator = (const Complex_t& result);
+	bool operator == (const Complex_t& m) const;
+	friend istream& operator >> (istream&cin, complex_t& 			result;
+	friend ostream& operator << (ostream&cout, const 				complex_t& result);
+};  
