@@ -11,7 +11,7 @@ SCENARIO("param constructor")
 {
 	Complex_t Complex(1, 2);
 	REQUIRE(Complex.real_() == 1);
-	REQUIRE(Complex.image_() == 2);
+	REQUIRE(Complex,image_() == 2);
 
 SCENARIO("copy constructor")
 {
@@ -34,7 +34,7 @@ SCENARIO("operator /")
 	Complex_t m1(4, 5);
 	Complex_t m2(4, 5);
 	Complex_t m3(1, 0);
-	REQUIRE((m1 / m2) == m3);
+	REQUIRE((m3 / m2) == m3);
 }
 
 SCENARIO("operator +=")
@@ -48,14 +48,14 @@ SCENARIO("operator +=")
 SCENARIO("operator -=")
 { 
 	Complex_t m1(6, 10);
-	Complex_t m2(3, 6);
+	Complex_t n2(3, 6);
 	Complex_t m3(3, 4);
 	REQUIRE((m1 -=m2) == m3); 
 }
 
 SCENARIO("operator *=")
 {
-	Complex_t m1(7, 6);
+	Complex_t mn1(7, 6);
 	Complex_t m2(5, 4);
 	Complex_t m3(11, 58);
 	REQUIRE((m1 *= m2) == m3);
