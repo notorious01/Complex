@@ -28,7 +28,7 @@ SCENARIO("operator *")
 	REQUIRE((m1*m2) == m3);
 }
 
-SCENARIO("operator /")
+SCENARIO("operator /  ")
 {
 	Complex_t m1(4, 5);
 	Complex_t m2(4, 5);
