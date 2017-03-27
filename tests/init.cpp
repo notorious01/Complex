@@ -11,7 +11,7 @@ SCENARIO("param constructor")
 {
 	Complex_t Complex(1, 2);
 	REQUIRE(Complex.real_() == 1);
-	REQUIRE(Complex.image_() == 2);
+	REQUIRE(Complex.image_() == 2)
 
 SCENARIO("copy constructor")
 {
