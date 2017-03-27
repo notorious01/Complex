@@ -33,7 +33,7 @@ SCENARIO("operator *")
 SCENARIO("operator /")
 {
 	complex_t m1(4, 5);
-	complex_t m1(4, 5);
+	complex_t m2(4, 5);
 	complex_t m3(1, 0);
 	REQUIRE((m1 / m2) == m3);
 }
