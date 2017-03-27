@@ -1,5 +1,5 @@
 # Complex
-[![Build Status](https://travis-ci.org/Ivanopulopulo/Complex.svg?branch=master)](https://travis-ci.org/Ivanopulopulo/Complex)
+[![Build Status](https://travis-ci.org/notorious01/Complex.svg?branch=master)](https://travis-ci.org/notorious01/Complex)
 - [x] Strings
 - [x] Columns
 - [x] def constructor
