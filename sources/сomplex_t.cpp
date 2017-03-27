@@ -37,22 +37,22 @@ complex_t complex_t::operator = (const complex_t& result)
 istream& operator >> (istream& is, complex_t& result) 
 {
 	cout << "Please enter real complex part:" << endl;
-	cin >> result.real;
+	is >> result.real;
 	cout << "Please enter imaginary complex part:" << endl;
-	cin >> result.image;
+	is >> result.image;
 	cout << endl;
-	return cin;
+	return is;
 }
 
 ostream& operator << (ostream& os,const complex_t& result) const
 {
 	if (result.image < 0)
 	{
-		cout << result.real << result.image << "i" << endl;
+		os << result.real << result.image << "i" << endl;
 	}
 	else
-		cout << result.real << "+" << result.image << "i" << endl;
-	return cout;
+		os << result.real << "+" << result.image << "i" << endl;
+	return os;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
