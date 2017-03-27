@@ -34,7 +34,7 @@ complex_t complex_t::operator = (const complex_t& result)
 
 }
 
-istream& operator >> (istream&cin, complex_t& result) 
+istream& operator >> (istream& is, complex_t& result) 
 {
 	cout << "Please enter real complex part:" << endl;
 	cin >> result.real;
@@ -44,7 +44,7 @@ istream& operator >> (istream&cin, complex_t& result)
 	return cin;
 }
 
-ostream& operator << (ostream&cout,const complex_t& result) const
+ostream& operator << (ostream& os,const complex_t& result) const
 {
 	if (result.image < 0)
 	{
