@@ -99,7 +99,7 @@ complex_t complex_t::operator /= (const complex_t& m2)
 
 complex_t complex_t::operator *= (const complex_t& m2) 
 {
-	double real_ = real*m2.real - image*m2.image;
+	float real_ = real*m2.real - image*m2.image;
 	image = real*m2.image + m2.real*image;
 	real = real_;
 	return *this;
