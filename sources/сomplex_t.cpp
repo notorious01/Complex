@@ -1,101 +1,93 @@
-#include "complex_t.hpp"
-
-complex_t::complex_t(): real(0.0), image(0.0)
+#include "сomplex_t.hpp"
+complex_t::complex_t() : real(0.0), image(0.0)
 {}
-complex_t::complex_t(double r, double im): real(r), image(im)
+complex_t::complex_t(double r, double im) : real(r), image(im)
 {}
-
 complex_t::complex_t(const complex_t&copy)
 {
 	real = copy.real;
 	image = copy.image;
 }
-
 double complex_t::real_() const
 {
 	return real;
 }
 
-double complex_t::image() const
+double complex_t::image_() const
 {
 	return image;
 }
-
 bool complex_t::operator == (const complex_t& m2) const
 {
 	if ((real == m2.real) && (image == m2.image))
-	return true;
+		return true;
 }
 
 complex_t complex_t::operator = (const complex_t& result)
 {
-	if (this !=result)
+	if (this != &result) 
 	{
-		real = result.real;
-		image = result.image;
-		return *this;
+	real = result.real;
+	image = result.image;
+	return *this;
 	}
+
 }
 
-istream& operator >> (istream&cin, complex_t& result)
+istream& operator >> (istream&cin, complex_t& result) 
 {
-	cout << "Vvedite real complex:" << endl;
+	cout << "Please enter real complex part:" << endl;
 	cin >> result.real;
-	cout << "Vvedite image comples:" << endl;
+	cout << "Please enter imaginary complex part:" << endl;
 	cin >> result.image;
 	cout << endl;
 	return cin;
 }
 
-ostream& operator << (ostream&cout, const complex_t& result)
+ostream& operator << (ostream&cout,const complex_t& result) 
 {
 	if (result.image < 0)
 	{
 		cout << result.real << result.image << "i" << endl;
 	}
 	else
-		cout << result.real << "+" <<result.image << "i" << endl;
+		cout << result.real << "+" << result.image << "i" << endl;
 	return cout;
 }
 
-/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 complex_t complex_t::operator * (const complex_t& m2) const
 {
 	return complex_t(real*m2.real - image*m2.image, real*m2.image + m2.real*image);
 }
 
-
 complex_t complex_t::operator / (const complex_t& m2) const
 {
-	return complex_t((real*m2.real + image*m2.image) / (m2.real*m2.real), (m2.real*image - real*m2.image) / (m2.real*m2.real + m2.image*m2.image));
+	return complex_t((real*m2.real + image*m2.image) / (m2.real*m2.real + m2.image*m2.image), (m2.real*image - real*m2.image) / (m2.real*m2.real + m2.image*m2.image));
 }
 
-
-complex_t complex_t::operator += (const complex_t& m2)
+complex_t complex_t::operator += (const complex_t& m2) 
 {
 	real += m2.real;
 	image += m2.image;
 	return *this;
 }
 
-
-complex_t complex_t::operator -= (const complex_t& m2)
+complex_t complex_t::operator -= (const complex_t& m2) 
 {
 	real -= m2.real;
 	image -= m2.image;
 	return *this;
 }
 
-
 complex_t complex_t::operator /= (const complex_t& m2) 
 {
-	float real_ = (real*m2.real + image*m2.image) / (m.real*m2.real + m.image*m2.image);
+	float real_ = (real*m2.real + image*m2.image) / (m2.real*m2.real + m2.image*m2.image);
 	image = (m2.real*image - real*m2.image) / (m2.real*m2.real + m2.image*m2.image);
 	real = real_;
 	return *this;
 }
-
 
 complex_t complex_t::operator *= (const complex_t& m2) 
 {
