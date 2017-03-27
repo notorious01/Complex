@@ -44,7 +44,7 @@ istream& operator >> (istream&cin, complex_t& result)
 	return cin;
 }
 
-ostream& operator << (ostream&cout,const complex_t& result) 
+ostream& operator << (ostream&cout,const complex_t& result) const
 {
 	if (result.image < 0)
 	{
