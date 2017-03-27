@@ -1,33 +1,33 @@
 #include "complex_t.hpp"
 
-Complex_t::Complex_t(): real(0.0), image(0.0)
+complex_t::complex_t(): real(0.0), image(0.0)
 {}
-Complex_t::Complex_t(double r, double im): real(r), image(im)
+complex_t::complex_t(double r, double im): real(r), image(im)
 {}
 
-Complex_t::Complex_t(const Complex_t&copy)
+complex_t::complex_t(const complex_t&copy)
 {
 	real = copy.real;
 	image = copy.image;
 }
 
-double Complex_t::real_() const
+double complex_t::real_() const
 {
 	return real;
 }
 
-double Complex_t::image() const
+double complex_t::image() const
 {
 	return image;
 }
 
-bool Complex_t::operator == (const complex_t& m) const
+bool complex_t::operator == (const complex_t& m2) const
 {
-	if ((real == m.real) && (image == m.image))
+	if ((real == m2.real) && (image == m2.image))
 	return true;
 }
 
-Complex_t Complex_t::operator = (const Complex_t& result)
+complex_t complex_t::operator = (const complex_t& result)
 {
 	if (this !=result)
 	{
@@ -37,7 +37,7 @@ Complex_t Complex_t::operator = (const Complex_t& result)
 	}
 }
 
-istream& operator >> (istream&cin, Complex_t& result)
+istream& operator >> (istream&cin, complex_t& result)
 {
 	cout << "Vvedite real complex:" << endl;
 	cin >> result.real;
@@ -60,47 +60,47 @@ ostream& operator << (ostream&cout, const complex_t& result)
 
 /////////////////////////////////////////////////////////
 
-Complex_t Complex_t::operator * (const Complex_t& m) const
+complex_t complex_t::operator * (const complex_t& m2) const
 {
-	return Complex_t(real*m.real - image*m.image, real*m.image + m.real*image);
+	return complex_t(real*m2.real - image*m2.image, real*m2.image + m2.real*image);
 }
 
 
-Complex_t Complex_t::operator / (const Complex_t& m) const
+complex_t complex_t::operator / (const complex_t& m2) const
 {
-	return Complex_t((real*m.real + image*m.image) / (m.real*m.real), (m.real*image - real*m.image) / (m.real*m.real + m.image*m.image));
+	return complex_t((real*m2.real + image*m2.image) / (m2.real*m2.real), (m2.real*image - real*m2.image) / (m2.real*m2.real + m2.image*m2.image));
 }
 
 
-Complex_t Complex_t::operator += (const Complex_t& m)
+complex_t complex_t::operator += (const complex_t& m2)
 {
-	real += m.real;
-	image += m.image;
+	real += m2.real;
+	image += m2.image;
 	return *this;
 }
 
 
-Complex_t Complex_t::operator -= (const Complex_t& m)
+complex_t complex_t::operator -= (const complex_t& m2)
 {
-	real -= m.real;
-	image -= m.image;
+	real -= m2.real;
+	image -= m2.image;
 	return *this;
 }
 
 
-Complex_t Complex_t::operator /= (const Complex_t& m) 
+complex_t complex_t::operator /= (const complex_t& m2) 
 {
-	float real_ = (real*m.real + image*m.image) / (m.real*m.real + m.image*m.image);
-	image = (m.real*image - real*m.image) / (m.real*m.real + m.image*m.image);
+	float real_ = (real*m2.real + image*m2.image) / (m.real*m2.real + m.image*m2.image);
+	image = (m2.real*image - real*m2.image) / (m2.real*m2.real + m2.image*m2.image);
 	real = real_;
 	return *this;
 }
 
 
-Complex_t Complex_t::operator *= (const Complex_t& m) 
+complex_t complex_t::operator *= (const complex_t& m2) 
 {
-	double real_ = real*m.real - image*m.image;
-	image = real*m.image + m.real*image;
+	double real_ = real*m2.real - image*m2.image;
+	image = real*m2.image + m2.real*image;
 	real = real_;
 	return *this;
 }
