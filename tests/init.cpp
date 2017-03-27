@@ -11,13 +11,14 @@ SCENARIO("param constructor")
 {
 	Complex_t Complex(1, 2);
 	REQUIRE(Complex.real_() == 1);
-	REQUIRE(Complex.image_() == 2)
+	REQUIRE(Complex.image_() == 2);
 
 SCENARIO("copy constructor")
 {
 	Complex_t Complex(1, 2);
 	Complex_t copy(Complex);
-	
+	REQUIRE(copy.real_() == 1);
+	REQUIRE(copy.image_() == 2);
 }
 
 SCENARIO("operator *")
@@ -28,7 +29,7 @@ SCENARIO("operator *")
 	REQUIRE((m1*m2) == m3);
 }
 
-SCENARIO("operator /  ")
+SCENARIO("operator /")
 {
 	Complex_t m1(4, 5);
 	Complex_t m2(4, 5);
